@@ -1,3 +1,6 @@
+[ohjimin@localhost Downloads]$ pwd
+/home/ohjimin/Downloads
+[ohjimin@localhost Downloads]$ ls
 [ohjimin@localhost Downloads]$ cd /home/ohjimin/Pictures/
 [ohjimin@localhost Pictures]$ pwd
 /home/ohjimin/Pictures
