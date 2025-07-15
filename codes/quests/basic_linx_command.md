@@ -325,18 +325,6 @@ d-----      2025-07-15   오후 3:52                src
 
 PS C:\Develops\Quest\powershell_pratice\my_project> "`"print('Hello World')`"" > hello.py
 PS C:\Develops\Quest\powershell_pratice\my_project>
-PS C
-
-PS C:\Develops\Quest\powershell_pratice\my_project> tree
-폴더 PATH의 목록입니다.
-볼륨 일련 번호는 52B6-33C5입니다.
-C:.
-├─build
-├─docs
-└─src
-PS C:\Develops\Quest\powershell_pratice\my_project> cat  .\build\main.py
-"print
-Hello World
-"
-PS C:\Develops\Quest\powershell_pratice\my_project> cat .\docs\proejct_info.txt
-"This is my project"
+PS C:\Develops\Quest\powershell_pratice\my_project> "`"print('Hello World')`"" > .\build\main.py
+PS C:\Develops\Quest\powershell_pratice\my_project> cat .\build\main.py
+"print('Hello World')"
