@@ -327,5 +327,16 @@ PS C:\Develops\Quest\powershell_pratice\my_project> "`"print('Hello World')`"" >
 PS C:\Develops\Quest\powershell_pratice\my_project>
 PS C
 
-
-PS C:\Develops\Quest\powershell_pratice\my_project>
+PS C:\Develops\Quest\powershell_pratice\my_project> tree
+폴더 PATH의 목록입니다.
+볼륨 일련 번호는 52B6-33C5입니다.
+C:.
+├─build
+├─docs
+└─src
+PS C:\Develops\Quest\powershell_pratice\my_project> cat  .\build\main.py
+"print
+Hello World
+"
+PS C:\Develops\Quest\powershell_pratice\my_project> cat .\docs\proejct_info.txt
+"This is my project"
