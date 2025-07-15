@@ -1,3 +1,5 @@
+# 📁Level 1: 기본 탐색 및 폴더 조작
+
 ```
 PS C:\Develops\Quest> mkdir powershell_pratice
 
@@ -59,6 +61,9 @@ PS C:\Develops\Quest\powershell_pratice> cd .\documents\
 PS C:\Develops\Quest\powershell_pratice\documents> ls
 PS C:\Develops\Quest\powershell_pratice\documents> cd C:\Develops\Quest\
 PS C:\Develops\Quest> cd .\powershell_pratice\
+```
+# 📄 Level 2: 파일 생성 및 조작
+```
 PS C:\Develops\Quest\powershell_pratice> "Hello PowerShell" > hello.txt
 PS C:\Develops\Quest\powershell_pratice> mv .\hello.txt .\documents\
 PS C:\Develops\Quest\powershell_pratice> "" > photo1.jpg
@@ -86,6 +91,9 @@ PS C:\Develops\Quest\powershell_pratice> cp .\images\^C
 PS C:\Develops\Quest\powershell_pratice> mv .\photo1.jpg .\images\
 PS C:\Develops\Quest\powershell_pratice> mv .\photo2.jpg .\backup\
 PS C:\Develops\Quest\powershell_pratice> cp .\images\photo* .\backup\
+```
+# 🔄 Level 3: 파일 이동 및 이름 변경
+```
 PS C:\Develops\Quest\powershell_pratice> "" > .\temp\test.txt
 PS C:\Develops\Quest\powershell_pratice> mv .\temp\test.txt .\documents\
 PS C:\Develops\Quest\powershell_pratice> mv .\documents\test.txt .\documents\moved_file.txt
@@ -133,6 +141,9 @@ d-----      2025-07-15   오후 3:43                images
 
 
 PS C:\Develops\Quest\powershell_pratice> mv C:\temporary .\temporary
+```
+# 🗑️ Level 4: 삭제연습
+```
 PS C:\Develops\Quest\powershell_pratice> ls
 
 
@@ -161,6 +172,9 @@ C:\Develops\Quest\powershell_pratice\backup의 항목에는 하위 항목이 있
 [Y] 예(Y)  [A] 모두 예(A)  [N] 아니요(N)  [L] 모두 아니요(L)  [S] 일시 중단(S)  [?] 도움말 (기본값은 "Y"): Y
 PS C:\Develops\Quest\powershell_pratice>
 PS C:\Develops\Quest\powershell_pratice>
+```
+# 🚀 Level 5: 종합 응용
+```
 PS C:\Develops\Quest\powershell_pratice> mkdir my_project
 
 
