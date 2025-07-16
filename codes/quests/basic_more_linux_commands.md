@@ -1,4 +1,5 @@
 # 🔍연습 문제1: 기본파일 시스템 탐색
+## 1-1 현재 위치 확인 및 이동
 ```
 [ohjimin@localhost ~]$ mkdir home
 [ohjimin@localhost ~]$ cd home
@@ -11,6 +12,9 @@ drwx------. 22 ohjimin ohjimin 4096 Jul 16 11:19 ..
 /home/ohjimin/home
 [ohjimin@localhost home]$ cd /
 [ohjimin@localhost /]$ cd /home/ohjimin/home
+```
+## 1-2 디렉터리 내용 확인
+```
 [ohjimin@localhost home]$ ls -al
 total 4
 drwxr-xr-x.  2 ohjimin ohjimin    6 Jul 16 11:19 .
@@ -262,6 +266,18 @@ lrwxrwxrwx.   1 root root        12 May  4 12:12 yum.conf -> dnf/dnf.conf
 drwxr-xr-x.   2 root root        98 Jul 16 10:12 yum.repos.d
 ```
 # 🗂️ 연습 문제2: 디렉터리 및 파일 생성
+## 2-1 디렉터리 구조 생성
+practice/
+<br>
+├── documents/
+<br>
+│   ├── reports/ls
+<br>
+│   └── notes/
+<br>
+├── images/
+<br>
+└── backup/
 ```
 [ohjimin@localhost home]$ mkdir practice
 [ohjimin@localhost home]$ mkdir documents
@@ -271,38 +287,46 @@ drwxr-xr-x.   2 root root        98 Jul 16 10:12 yum.repos.d
 [ohjimin@localhost practice]$ mkdir backup
 [ohjimin@localhost practice]$ mkdir documents/reports
 [ohjimin@localhost practice]$ mkdir documents/notes
+```
+## 2-2 파일 생성 및 내용 작성
+```
 [ohjimin@localhost practice]$ touch documents/reports/ls
 [ohjimin@localhost practice]$ echo "Hello Linux!" > documents/readme.txt
 [ohjimin@localhost practice]$ echo "Linux praticing" > documents/notes/memo.txt
 [ohjimin@localhost practice]$ ls
+backup  documents  images
 ```
 # 👀연습문제 3: 파일 내용 확인 및 조작
+## 3-1 파일 내용 출력
 ```
-backup  documents  images
-[ohjimin@localhost practice]$ cat documents/re
-readme.txt  reports/    
-[ohjimin@localhost practice]$ cat documents/re
-readme.txt  reports/    
 [ohjimin@localhost practice]$ cat documents/readme.txt 
 Hello Linux!
 [ohjimin@localhost practice]$ cat documents/notes/memo.txt 
 Linux praticing
+```
+## 3-2 파일 복사
+```
 [ohjimin@localhost practice]$ cp documents/readme.txt backup/
 [ohjimin@localhost practice]$ cp documents backup/
 cp: -r not specified; omitting directory 'documents'
 [ohjimin@localhost practice]$ cp -r documents backup/
 ```
 # 🏁연습 문제4: 파일 이동 및 이름 변경
+## 4-1 파일이동
 ```
 [ohjimin@localhost practice]$ mv documents/notes/memo.txt documents/
 [ohjimin@localhost practice]$ mv images/ media/
 [ohjimin@localhost practice]$ ls
 backup  documents  media
+```
+## 4-2 파일 이름 변경
+```
 [ohjimin@localhost practice]$ mv documents/readme.txt documents/introduction.txt
 [ohjimin@localhost practice]$ mv documents/memo.txt study_notes.txt
 [ohjimin@localhost practice]$ cd /home/ohjimin/home
 ```
 # 🌟연습문제 5: 종합 실습
+## 5-1 프로젝트 디렉터리 생성
 ```
 [ohjimin@localhost home]$ mkdir my_project
 [ohjimin@localhost home]$ cd my_project/
@@ -313,6 +337,9 @@ config  docs  src  tests
 [ohjimin@localhost my_project]$ echo "# My Project Documentation" > docs/README.md
 [ohjimin@localhost my_project]$ echo "# Configuration File" > config/settings.conf
 [ohjimin@localhost my_project]$ pwd
+```
+## 5-2 백업 및 정리
+```
 /home/ohjimin/home/my_project
 [ohjimin@localhost my_project]$ cp /home/ohjimin/home/my_project /home/ohjimin/home/my_project_backup
 cp: -r not specified; omitting directory '/home/ohjimin/home/my_project'
