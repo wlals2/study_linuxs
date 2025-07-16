@@ -1,4 +1,4 @@
-# 리눅스 상대주소 실습 문제
+# 📍 리눅스 상대주소 실습 문제
 ## 사전 준비 : 실습 환경 설정
 ```
 mkdir -p ~/practice/project/{src,docs,tests,config}
@@ -50,7 +50,7 @@ touch ~/practice/project/config/settings.conf
 <br>
 </b>
 
-## 연습문제 1: 기본 상대 주소 이해
+## 📌 연습문제 1: 기본 상대 주소 이해
 <h3><b>1-1·2. 현재 위치에서 상대 주소 확인 및 파일 검증 <br></h3></b>
 
 <b> 0. 현재 위치 확인 </b><br>
@@ -104,7 +104,7 @@ drwxr-xr-x. 6 ohjimin ohjimin 73 Jul 16 16:21 ..
 
 
 
-## 연습 문제2: 다양한 시작점에서의 상대주소
+## 📌 연습 문제2: 다양한 시작점에서의 상대주소
 <h3><b> 2-1. 시작점 변경 실습 </h3></b>
 <b>1. app.py 파일로 이동하는 상대 주소를 작성하시오</b>
 
@@ -172,7 +172,7 @@ drwxr-xr-x. 4 ohjimin ohjimin 31 Jul 16 16:21 ..
 -rw-r--r--. 1 ohjimin ohjimin  0 Jul 16 16:35 helper.py
 ```
 
-## 연습문제 3: 파일 내용 확인 및 조작
+## 📌 연습문제 3: 파일 내용 확인 및 조작
 <h3><b>3-1. 상대 주소를 이용한 파일 내용 출력</h3></b>
 <b>1. 프로젝트 루트의 README.md 파일 내용을 출력하시오.</b>
 
@@ -213,7 +213,7 @@ drwxr-xr-x. 4 ohjimin ohjimin 31 Jul 16 16:21 ..
 [ohjimin@localhost main]$ pwd
 /home/ohjimin/practice/project/src/main
 ```
-## 연습문제 4: 파일 복사 및 이동 
+## 📌 연습문제 4: 파일 복사 및 이동 
 <h3><b>4-1. 상대주소를 이용한 파일 이동</h3></b>
 <b>1. api.md 파일을 docs/user/ 디렉토리에 api_copy.md로 복사하시오.</b>
 
@@ -278,7 +278,7 @@ drwxr-xr-x. 6 ohjimin ohjimin 73 Jul 16 16:21 ..
 [ohjimin@localhost tests]$ pwd
 /home/ohjimin/practice/project/tests
 ```
-## 연습문제5: 복합 상대 주소 활용
+## 📌 연습문제5: 복합 상대 주소 활용
 <h3><b>5-1. 다중 파일 조작</h3></b>
 <b>1. src/main/ 디렉토리의 모든 파일을 docs/dev/ 디렉토리에 복사하시오.</b>
 
@@ -343,7 +343,7 @@ drwxr-xr-x. 7 ohjimin ohjimin 94 Jul 16 17:21 ..
 [ohjimin@localhost utils]$ find ../../ -name *.txt
 ../../tests/unit/user/manual.txt
 ```
-## 연습문제 6: 에러 찾기 및 수정
+## 📌 연습문제 6: 에러 찾기 및 수정
 <h3><b> 6.1 잘못된 상대 주소 찾기 </h3></b>
 
 <b>A. ls ../../../project/src/main/</b><br>
@@ -365,12 +365,18 @@ drwxr-xr-x. 7 ohjimin ohjimin 94 Jul 16 17:21 ..
 <b> 2. mv api_copy.md ../../../src/main/ </b><br>
 <b> 3. cat ../../README.md </b>
 
-## 연습문제 7: 종합 실습
+## 📌 연습문제 7: 종합 실습
 <h3><b> 7-1. 프로젝트 구조 재정리</h3></b>
 <b>1. src/main/ 디렉토리에 models/ 하위 디렉토리를 생성하시오 </b>
 
 ```
-docs/ 디렉토리에 README.md 파일을 생성하고 "# Project Documentation"이라는 내용을 작성하시오.
+[ohjimin@localhost main]$ cp -r ../../src/utils/*.py ./models/
+[ohjimin@localhost main]$ ls -al ./models/
+total 0
+drwxr-xr-x. 2 ohjimin ohjimin 23 Jul 16 18:01 .
+drwxr-xr-x. 3 ohjimin ohjimin 57 Jul 16 18:03 ..
+-rw-r--r--. 1 ohjimin ohjimin  0 Jul 16 18:36 helper.py
+
 ```
 
 
