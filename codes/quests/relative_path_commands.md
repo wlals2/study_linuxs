@@ -376,7 +376,6 @@ total 0
 drwxr-xr-x. 2 ohjimin ohjimin 23 Jul 16 18:01 .
 drwxr-xr-x. 3 ohjimin ohjimin 57 Jul 16 18:03 ..
 -rw-r--r--. 1 ohjimin ohjimin  0 Jul 16 18:36 helper.py
-
 ```
 
 
@@ -387,7 +386,6 @@ drwxr-xr-x. 3 ohjimin ohjimin 57 Jul 16 18:03 ..
 # Project Documentation
 [ohjimin@localhost project]$ pwd
 /home/ohjimin/practice/project
-
 ```
 
 <b>3.tests/unit/ 디렉토리의 모든 파일을 tests/ 디렉토리로 이동하시오.</b>
@@ -401,7 +399,6 @@ drwxr-xr-x. 7 ohjimin ohjimin 102 Jul 16 17:54 ..
 -rw-r--r--. 1 ohjimin ohjimin   0 Jul 16 17:12 settings.conf
 -rw-r--r--. 1 ohjimin ohjimin  16 Jul 16 17:07 test_main.py
 drwxr-xr-x. 2 ohjimin ohjimin   6 Jul 16 18:04 unit
-
 ```
 <b>4. config/ 디렉토리의 모든 파일을 src/ 디렉토리에 복사하시오. </b>
 ```
