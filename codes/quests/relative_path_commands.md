@@ -405,7 +405,7 @@ config  main  utils
 [ohjimin@localhost project]$ 
 
 ```
-<h3><b> 7-1 백업 및 정리 </h3></b>
+<h3><b> 7-2 백업 및 정리 </h3></b>
 <b>1. 전체 프로젝트를 ../../project_backup/으로 복사하시오. </b>
 
 ```
