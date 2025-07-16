@@ -215,18 +215,18 @@ drwxr-xr-x. 4 ohjimin ohjimin 31 Jul 16 16:21 ..
 ```
 ## 📌 연습문제 4: 파일 복사 및 이동 
 <h3><b>4-1. 상대주소를 이용한 파일 이동</h3></b>
-<b>1. api.md 파일을 docs/user/ 디렉토리에 api_copy.md로 복사하시오.</b>
+<b>1. api_copy.md 파일을 docs/user/ 디렉토리에 api_copy.md로 복사하시오.</b>
 
 ```
 [ohjimin@localhost main]$ pwd
 /home/ohjimin/practice/project/src/main
 [ohjimin@localhost main]$ cd ~/practice/project/docs/dev/
-[ohjimin@localhost dev]$ cp ../../docs/dev/api.md ../../docs/user/
+[ohjimin@localhost dev]$ cp ../../docs/dev/api.md ../../docs/user/api_copy_md
 [ohjimin@localhost dev]$ ls -al ../../docs/user/
 total 0
 drwxr-xr-x. 2 ohjimin ohjimin 38 Jul 16 17:10 .
 drwxr-xr-x. 4 ohjimin ohjimin 29 Jul 16 16:21 ..
--rw-r--r--. 1 ohjimin ohjimin  0 Jul 16 17:10 api.md
+-rw-r--r--. 1 ohjimin ohjimin  0 Jul 16 17:10 api_compy.md
 -rw-r--r--. 1 ohjimin ohjimin  0 Jul 16 16:38 manual.txt
 ```
 <b>2. src/utils/helper.py 파일을 현재 디렉토리에 복사하시오.</b>
@@ -307,8 +307,6 @@ drwxr-xr-x. 3 ohjimin ohjimin 18 Jul 16 17:14 ..
 -rw-r--r--. 1 ohjimin ohjimin  0 Jul 16 17:12 settings.conf
 -rw-r--r--. 1 ohjimin ohjimin 16 Jul 16 17:07 test_main.py
 drwxr-xr-x. 2 ohjimin ohjimin 38 Jul 16 17:10 user
-[ohjimin@localhost project]$ ls -al docs/user
-ls: cannot access 'docs/user': No such file or directory
 [ohjimin@localhost project]$ pwd
 /home/ohjimin/practice/project
 ```
@@ -355,11 +353,16 @@ drwxr-xr-x. 7 ohjimin ohjimin 94 Jul 16 17:21 ..
 <b>C. cd ../dev/../../config/ </b><br>
 :cd ../dev/../../config/
 
+<b> mv 로 인해 모든 파일이 이동되어짐 </b>
+
 <b>D. cp manual.txt ../../tests/unit/backup.txt</b><br>
-:OK
+:OK <br>
+올바른 경로이나  파일이 존재 하지 않음
 
 <b>E. mv api_copy.md ../../../src/main/ </b><br>
-:mv api_copy.md ../../src/main
+:mv api_copy.md ../../src/main<br>
+파일이 존재하지 않음
+
 <h3><b> 6.2 경로최적화 </h3></b>
 <b> 1. mv api_copy.md ../../../src/main/</b><br>
 <b> 2. mv api_copy.md ../../../src/main/ </b><br>
@@ -406,7 +409,6 @@ drwxr-xr-x. 2 ohjimin ohjimin   6 Jul 16 18:04 unit
 [ohjimin@localhost project]$ ls ./src/
 config  main  utils
 [ohjimin@localhost project]$ 
-
 ```
 <h3><b> 7-2 백업 및 정리 </h3></b>
 <b>1. 전체 프로젝트를 ../../project_backup/으로 복사하시오. </b>
