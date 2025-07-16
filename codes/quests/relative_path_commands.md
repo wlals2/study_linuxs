@@ -355,7 +355,7 @@ drwxr-xr-x. 7 ohjimin ohjimin 94 Jul 16 17:21 ..
 <b>C. cd ../dev/../../config/ </b><br>
 :cd ../dev/../../config/
 
-<b>D. cd ../dev/../../config/ </b><br>
+<b>D. cp manual.txt ../../tests/unit/backup.txt
 :OK
 
 <b>E. mv api_copy.md ../../../src/main/ </b><br>
