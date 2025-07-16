@@ -310,6 +310,12 @@ Linux praticing
 [ohjimin@localhost practice]$ cp documents backup/
 cp: -r not specified; omitting directory 'documents'
 [ohjimin@localhost practice]$ cp -r documents backup/
+[ohjimin@localhost practice]$ ls -al backup/
+total 4
+drwxr-xr-x. 3 ohjimin ohjimin 41 Jul 16 11:23 .
+drwxr-xr-x. 5 ohjimin ohjimin 73 Jul 16 11:25 ..
+drwxr-xr-x. 4 ohjimin ohjimin 52 Jul 16 11:23 documents
+-rw-r--r--. 1 ohjimin ohjimin 13 Jul 16 11:23 readme.txt
 ```
 # 🏁연습 문제4: 파일 이동 및 이름 변경
 ## 4-1 파일이동
@@ -323,16 +329,23 @@ backup  documents  media
 ```
 [ohjimin@localhost practice]$ mv documents/readme.txt documents/introduction.txt
 [ohjimin@localhost practice]$ mv documents/memo.txt study_notes.txt
-[ohjimin@localhost practice]$ cd /home/ohjimin/home
 ```
 # 🌟연습문제 5: 종합 실습
 ## 5-1 프로젝트 디렉터리 생성
 ```
+[ohjimin@localhost practice]$ cd /home/ohjimin/home
 [ohjimin@localhost home]$ mkdir my_project
 [ohjimin@localhost home]$ cd my_project/
 [ohjimin@localhost my_project]$ mkdir src docs tests config
-[ohjimin@localhost my_project]$ ls
-config  docs  src  tests
+[ohjimin@localhost my_project]$ ls -al
+total 4
+drwxr-xr-x. 6 ohjimin ohjimin 73 Jul 16 11:27 .
+drwxr-xr-x. 5 ohjimin ohjimin 65 Jul 16 11:27 ..
+drwxr-xr-x. 2 ohjimin ohjimin 27 Jul 16 11:26 config
+drwxr-xr-x. 2 ohjimin ohjimin  6 Jul 16 11:27 docs
+drwxr-xr-x. 2 ohjimin ohjimin 20 Jul 16 11:27 src
+drwxr-xr-x. 2 ohjimin ohjimin  6 Jul 16 11:25 tests
+
 [ohjimin@localhost my_project]$ echo "# Main Python FIle" > src/main.py
 [ohjimin@localhost my_project]$ echo "# My Project Documentation" > docs/README.md
 [ohjimin@localhost my_project]$ echo "# Configuration File" > config/settings.conf
@@ -346,6 +359,15 @@ cp: -r not specified; omitting directory '/home/ohjimin/home/my_project'
 [ohjimin@localhost my_project]$ cp -r /home/ohjimin/home/my_project /home/ohjimin/home/my_project_backup
 [ohjimin@localhost my_project]$ mv src/main.py src/app.py
 [ohjimin@localhost my_project]$ mv docs/README.md /home/ohjimin/home/my_project
-[ohjimin@localhost my_project]$ ls
-config  docs  README.md  src  tests
+[ohjimin@localhost my_project]$ ls -al
+total 4
+drwxr-xr-x. 6 ohjimin ohjimin 73 Jul 16 11:27 .
+drwxr-xr-x. 5 ohjimin ohjimin 65 Jul 16 11:27 ..
+drwxr-xr-x. 2 ohjimin ohjimin 27 Jul 16 11:26 config
+drwxr-xr-x. 2 ohjimin ohjimin  6 Jul 16 11:27 docs
+-rw-r--r--. 1 ohjimin ohjimin 27 Jul 16 11:26 README.md
+drwxr-xr-x. 2 ohjimin ohjimin 20 Jul 16 11:27 src
+drwxr-xr-x. 2 ohjimin ohjimin  6 Jul 16 11:25 tests
+[ohjimin@localhost my_project]$ 
+
 ```
