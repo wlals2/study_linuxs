@@ -337,10 +337,10 @@ config  docs  src  tests
 [ohjimin@localhost my_project]$ echo "# My Project Documentation" > docs/README.md
 [ohjimin@localhost my_project]$ echo "# Configuration File" > config/settings.conf
 [ohjimin@localhost my_project]$ pwd
+/home/ohjimin/home/my_project
 ```
 ## 5-2 백업 및 정리
 ```
-/home/ohjimin/home/my_project
 [ohjimin@localhost my_project]$ cp /home/ohjimin/home/my_project /home/ohjimin/home/my_project_backup
 cp: -r not specified; omitting directory '/home/ohjimin/home/my_project'
 [ohjimin@localhost my_project]$ cp -r /home/ohjimin/home/my_project /home/ohjimin/home/my_project_backup
