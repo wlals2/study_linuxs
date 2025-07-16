@@ -1,4 +1,4 @@
-# 연습 문제1: 기본파일 시스템 탐색
+# 🔍연습 문제1: 기본파일 시스템 탐색
 ```
 [ohjimin@localhost ~]$ mkdir home
 [ohjimin@localhost ~]$ cd home
@@ -261,13 +261,10 @@ drwxr-xr-x.   2 root root        57 Jul 16 10:14 yum
 lrwxrwxrwx.   1 root root        12 May  4 12:12 yum.conf -> dnf/dnf.conf
 drwxr-xr-x.   2 root root        98 Jul 16 10:12 yum.repos.d
 ```
-# 연습 문제2: 디렉터리 및 파일 생성
+# 🗂️ 연습 문제2: 디렉터리 및 파일 생성
 ```
 [ohjimin@localhost home]$ mkdir practice
 [ohjimin@localhost home]$ mkdir documents
-[ohjimin@localhost home]$ rm documents/
-rm: cannot remove 'documents/': Is a directory
-[ohjimin@localhost home]$ rm -r documents/
 [ohjimin@localhost home]$ cd practice/
 [ohjimin@localhost practice]$ mkdir documents
 [ohjimin@localhost practice]$ mkdir images
@@ -279,7 +276,7 @@ rm: cannot remove 'documents/': Is a directory
 [ohjimin@localhost practice]$ echo "Linux praticing" > documents/notes/memo.txt
 [ohjimin@localhost practice]$ ls
 ```
-# 연습문제 3: 파일 내용 확인 및 조잘
+# 👀연습문제 3: 파일 내용 확인 및 조작
 ```
 backup  documents  images
 [ohjimin@localhost practice]$ cat documents/re
@@ -295,7 +292,7 @@ Linux praticing
 cp: -r not specified; omitting directory 'documents'
 [ohjimin@localhost practice]$ cp -r documents backup/
 ```
-# 연습 문제4: 파일 이동 및 이름 변경
+# 🏁연습 문제4: 파일 이동 및 이름 변경
 ```
 [ohjimin@localhost practice]$ mv documents/notes/memo.txt documents/
 [ohjimin@localhost practice]$ mv images/ media/
@@ -305,7 +302,7 @@ backup  documents  media
 [ohjimin@localhost practice]$ mv documents/memo.txt study_notes.txt
 [ohjimin@localhost practice]$ cd /home/ohjimin/home
 ```
-# 연습문제 5: 종합 실습
+# 🌟연습문제 5: 종합 실습
 ```
 [ohjimin@localhost home]$ mkdir my_project
 [ohjimin@localhost home]$ cd my_project/
