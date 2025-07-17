@@ -88,49 +88,17 @@ ls -al [a-f]*.*
 
 ### 4-1. 확장자가 3글자인 모든 파일 출력 (예: .txt, .doc, .log, .jpg, .png, .gif, .tar)
 ```bash
-[ohjimin@localhost wildcard_practice]$ ls -al *.???
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 backup_2023.tar
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 backup_2024.tar
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 data.csv
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 debug.log
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 error.log
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 file1.txt
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 file2.txt
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 file3.doc
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 image1.jpg
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 image2.png
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 photo.gif
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 report.txt
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 test1.log
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 test2.log
+ls -al *.???
 ```
 
 ### 4-2. 숫자가 포함된 모든 파일 출력
 ```bash
-[ohjimin@localhost wildcard_practice]$ ls -al *[1-9].*
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 backup_2023.tar
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 backup_2024.tar
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 file1.txt
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 file2.txt
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 file3.doc
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 image1.jpg
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 image2.png
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 test1.log
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 test2.log
-
+ls -al *[1-9].*
 ```
 
 ### 4-3. `.txt` 또는 `.log` 파일만 출력
 ```bash
-[ohjimin@localhost wildcard_practice]$ ls -al *.{txt,log}
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 debug.log
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 error.log
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 file1.txt
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 file2.txt
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 report.txt
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 test1.log
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 test2.log
-
+ls -al *.{txt,log}
 ```
 
 ---
@@ -139,31 +107,17 @@ ls -al [a-f]*.*
 
 ### 5-1. 파일명이 `test`로 시작하지 않는 모든 `.log` 파일 출력
 ```bash
-[ohjimin@localhost wildcard_practice]$ ls -al [^t]*.log
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 debug.log
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 error.log
-
+ls -al [^t]*.log
 ```
 
 ### 5-2. 모든 이미지 파일 (jpg, png, gif)을 `docs` 디렉터리로 이동
 ```bash
-[ohjimin@localhost wildcard_practice]$ mv *.{jpg,png,gif} ./docs/
-[ohjimin@localhost wildcard_practice]$ ls -al ./docs/
-total 4
-drwxr-xr-x. 2 ohjimin ohjimin   59 Jul 17 14:49 .
-drwxr-xr-x. 5 ohjimin ohjimin 4096 Jul 17 14:49 ..
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 14:38 image1.jpg
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 14:38 image2.png
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 14:38 photo.gif
-
+mv *.{jpg,png,gif} ./docs/
 ```
 
 ### 5-3. 2023년 또는 2024년 백업 파일만 출력
 ```bash
-[ohjimin@localhost wildcard_practice]$ ls -al *_{2023,2024}.*
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 backup_2023.tar
--rw-r--r--. 1 ohjimin ohjimin 0 Jul 17 14:38 backup_2024.tar
-
+ls -al *_{2023,2024}.*
 ```
 
 ---
@@ -172,38 +126,14 @@ drwxr-xr-x. 5 ohjimin ohjimin 4096 Jul 17 14:49 ..
 
 ### 6-1. 확장자가 있는 모든 파일을 `temp` 디렉터리로 복사
 ```bash
-[ohjimin@localhost wildcard_practice]$ cp *.* ./temp
-[ohjimin@localhost wildcard_practice]$ ls -al ./temp
-total 8
-drwxr-xr-x. 2 ohjimin ohjimin 4096 Jul 17 15:04 .
-drwxr-xr-x. 5 ohjimin ohjimin 4096 Jul 17 14:49 ..
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 15:04 backup_2023.tar
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 15:04 backup_2024.tar
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 15:04 config.conf
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 15:04 data.csv
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 15:04 debug.log
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 15:04 error.log
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 15:04 file1.txt
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 15:04 file2.txt
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 15:04 file3.doc
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 15:04 report.txt
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 15:04 test1.log
--rw-r--r--. 1 ohjimin ohjimin    0 Jul 17 15:04 test2.log
+cp *.* ./temp
+ls -al ./temp
 
 ```
 
 ### 6-2. 파일명이 4글자 이하인 파일들의 상세 정보 출력
 ```bash
-[ohjimin@localhost wildcard_practice]$ ls  ????
-docs:
-image1.jpg  image2.png  photo.gif
-
-logs:
-
-temp:
-backup_2023.tar  config.conf  debug.log  file1.txt  file3.doc   test1.log
-backup_2024.tar  data.csv     error.log  file2.txt  report.txt  test2.log
-
+ ls  ????
 ```
 
 ### 6-3. `file`로 시작하는 모든 파일의 내용을 `combined.txt`로 합치기
@@ -248,25 +178,6 @@ ls -al {file,test}*.*
 ### 8-3. 파일명이 `test` 또는 `file`로 시작하는 모든 파일 삭제 (주의: 실제로는 실행하지 말고 명령어만 작성)
 ```bash
 rm {test,file}.*
-```
-
----
-
-## 보너스 문제
-
-### 보너스 1: 모든 로그 파일을 날짜별로 분류하여 `logs` 디렉터리의 하위 폴더로 이동
-```bash
-# 명령어를 작성하세요
-```
-
-### 보너스 2: 파일 크기가 0바이트인 모든 파일 찾기
-```bash
-# 명령어를 작성하세요
-```
-
-### 보너스 3: 확장자별로 파일 개수 세기
-```bash
-# 명령어를 작성하세요
 ```
 
 ---
