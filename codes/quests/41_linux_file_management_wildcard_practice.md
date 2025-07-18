@@ -87,7 +87,7 @@ rm *.tmp
 ```
 ## temp로 시작하는 모든 파일을 삭제하세요
 ``` bash
-temp*.tmp
+rm temp*.tmp
 ```
 ## 2023년 백업 파일만 삭제하세요
 ``` bash
@@ -214,4 +214,270 @@ mkdir images && mv *.jpg ./images
 [ $(ls -1 *.txt 2>/dev/null | wc -l) -gt 5 ] && mkdir -p backup || echo "파일이 부족합니다"
 ```
 
+## 디렉터리 구조 확인
+```bash
+ls -al
 
+drwxr-xr-x. 18 ohjimin ohjimin 4096 Jul 18 09:45 .
+drwx------. 28 ohjimin ohjimin 4096 Jul 18 09:37 ..
+drwxr-xr-x.  7 ohjimin ohjimin  191 Jul 18 09:45 archives
+drwxr-xr-x.  2 ohjimin ohjimin 4096 Jul 18 09:45 backup
+drwxr-xr-x.  3 ohjimin ohjimin  149 Jul 18 09:45 data
+drwxr-xr-x.  2 ohjimin ohjimin  130 Jul 18 09:45 documents
+drwxr-xr-x.  2 ohjimin ohjimin   25 Jul 18 09:45 draft
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 final_report.txt
+drwxr-xr-x.  2 ohjimin ohjimin   77 Jul 18 09:45 images
+drwxr-xr-x. 17 ohjimin ohjimin 4096 Jul 18 09:45 logs
+drwxr-xr-x.  2 ohjimin ohjimin    6 Jul 18 09:45 onging
+drwxr-xr-x.  2 ohjimin ohjimin   57 Jul 18 09:45 ongoing
+drwxr-xr-x.  2 ohjimin ohjimin  114 Jul 17 18:26 processed
+drwxr-xr-x.  2 ohjimin ohjimin    6 Jul 18 09:45 project_A
+drwxr-xr-x.  2 ohjimin ohjimin    6 Jul 18 09:45 project_B
+drwxr-xr-x.  2 ohjimin ohjimin    6 Jul 18 09:45 project_C
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 report1.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 report2.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 report3.txt
+drwxr-xr-x.  2 ohjimin ohjimin   64 Jul 18 09:45 scripts
+drwxr-xr-x.  2 ohjimin ohjimin   46 Jul 17 18:41 single_digit
+drwxr-xr-x.  8 ohjimin ohjimin  129 Jul 17 17:46 test
+```
+## 특정 디렉터리 내용 확인
+```bash
+ls -al backip/
+ls -al images/
+ls -al documents/
+
+[ohjimin@localhost wildcard_file_practice]$ ls -al backup && ls -al images/ && ls -al documents/ 
+total 8
+drwxr-xr-x.  2 ohjimin ohjimin 4096 Jul 18 09:45 .
+drwxr-xr-x. 18 ohjimin ohjimin 4096 Jul 18 09:45 ..
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 data1.csv
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 data2.csv
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 data3.csv
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 final_report.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 license.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 log_access.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 log_error.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 log_system.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 new_report.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 old_report.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 report1.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 report2.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 report3.txt
+total 4
+drwxr-xr-x.  2 ohjimin ohjimin   77 Jul 18 09:45 .
+drwxr-xr-x. 18 ohjimin ohjimin 4096 Jul 18 09:45 ..
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 image1.jpg
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 image2.jpg
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 image3.png
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 photo.gif
+total 4
+drwxr-xr-x.  2 ohjimin ohjimin  130 Jul 18 09:45 .
+drwxr-xr-x. 18 ohjimin ohjimin 4096 Jul 18 09:45 ..
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 document.pdf
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 presentation.ppt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 report1.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 report2.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 report3.txt
+-rw-r--r--.  1 ohjimin ohjimin    0 Jul 18 09:45 spreadsheet.xls
+```
+## 파일 개수 확인 ls *.txt | wc -l / ls *.jpg | wc -l
+```bash
+[ohjimin@localhost wildcard_file_practice]$ ls *.txt | wc -l
+4
+[ohjimin@localhost wildcard_file_practice]$ ls *.jpg | wc -l
+ls: cannot access '*.jpg': No such file or directory
+0
+```
+## 전체 파일 목록 확인
+``` bash
+[ohjimin@localhost wildcard_file_practice]$ find . -type f | sort
+./archives/backup_2023.tar
+./archives/backup_2024.tar
+./archives/new_report.txt
+./archives/old_report.txt
+./backup/data1.csv
+./backup/data2.csv
+./backup/data3.csv
+./backup/final_report.txt
+./backup/license.txt
+./backup/log_access.txt
+./backup/log_error.txt
+./backup/log_system.txt
+./backup/new_report.txt
+./backup/old_report.txt
+./backup/report1.txt
+./backup/report2.txt
+./backup/report3.txt
+./data/data1.csv
+./data/data2.csv
+./data/data3.csv
+./data/data_old.csv
+./data/file_001.dat
+./data/file_002.dat
+./data/file_010.dat
+./documents/document.pdf
+./documents/presentation.ppt
+./documents/report1.txt
+./documents/report2.txt
+./documents/report3.txt
+./documents/spreadsheet.xls
+./draft/license.txt
+./final_report.txt
+./images/image1.jpg
+./images/image2.jpg
+./images/image3.png
+./images/photo.gif
+./logs/access/log_access.txt
+./logs/error/log_error.txt
+./logs/system/log_system.txt
+./ongoing/temp1.tmp
+./ongoing/temp2.tmp
+./ongoing/temp3.tmp
+./processed/data1.csv
+./processed/data2.csv
+./processed/data3.csv
+./processed/report1.txt
+./processed/report2.txt
+./processed/report3.txt
+./report1.txt
+./report2.txt
+./report3.txt
+./scripts/script1.sh
+./scripts/script2.sh
+./scripts/test_script.sh
+./single_digit/file_001.dat
+./single_digit/file_002.dat
+./test/backup/test1.txt
+./test/backup/test2.txt
+./test/test1.txt
+./test/test2.txt
+```
+## 실제 명령 실행 전에 패턴이 올바른지 확인
+```
+echo cp *.txt backup/    # 실제로는 실행되지 않고 명령어만 출력
+
+ls *.txt                 # 선택될 파일들 미리 확인
+
+힌트
+{} 중괄호 확장 활용: mkdir {dir1,dir2,dir3}
+[] 문자 범위 활용: [1-3], [a-z]
+
+- 와일드카드 활용: file*, *.txt
+? 단일 문자 활용: file?.txt
+복합 패턴 활용: *[0-9]*, file[1-3].txt
+디렉터리 생성 시 -p 옵션 활용: mkdir -p path/to/directory
+```
+## 전체 명령어 정리
+``` bash
+touch report1.txt report2.txt report3.txt \
+&& touch data1.csv data2.csv data3.csv data_old.csv \
+&& touch image1.jpg image2.jpg image3.png photo.gif \
+&& touch backup_2023.tar backup_2024.tar config.conf \
+&& touch log_error.txt log_access.txt log_system.txt \
+&& touch temp1.tmp temp2.tmp temp3.tmp \
+&& touch file_001.dat file_002.dat file_010.dat \
+&& touch script1.sh script2.sh test_script.sh \
+&& touch document.pdf presentation.ppt spreadsheet.xls \
+&& touch readme.md changelog.md license.txt \
+&& touch old_report.txt new_report.txt final_report.txt
+
+mkdir archives backup logs images documents scripts
+
+mkdir backup_{2020,2021,2022,2023,2024}
+
+mkdir -p ./logs/log_{01,02,03,04,05,06,07,08,09,10,11,12}
+
+mkdir project_{A,B,C}
+
+mkdir -p ./data/2024/{01,02,03}
+
+cp *.txt ./backup/
+
+cp report* ./documents/
+
+cp image?.* ./images
+
+cp data?.csv ./backup/
+
+cp logs_*.txt ./logs/
+
+mkdir temp
+mv *.tmp ./temp/
+
+mv backup_* ./archives
+
+mv *.sh ./scripts/
+
+mv file_???.data ./data/
+
+mv {old_,new_}*.txt ./archives/
+
+rm *.tmp
+
+rm temp*.tmp
+
+rm backup_2023.tar
+
+rm *.??
+
+mv *.{jpg,png,gif} ./images/
+
+mv *.{pdf,ppt,xls,md} ./documents/
+
+mkdir data
+mv *.{csv,data} ./data/
+
+cp *.txt ./backup/txt_files/
+
+cp *.conf ./backup/config/
+
+rm *.conf 
+
+mkdir ./logs/{error,access,system}
+
+mv log_error.txt ./logs/error
+
+mv log_access.txt ./logs/access
+
+mv log_system.txt ./logs/system
+
+cp {report,data}?.* ./processed
+
+mv {report,license}.txt ./draft
+
+cp file_{001,002}.dat ./single_digit
+
+mv report*.txt ./completed/
+
+mkdir ./onging
+mv temp* ./ongoing/
+
+mv backup_* ./archive/
+
+rm *.tmp
+
+mv backup_2024.tar ./logs/2024/
+
+mv logs_error.txt ./logs/errors
+
+rm backup_2023.tar
+
+mv log_system.txt ./logs/system
+
+mv *.sh ./scripts/
+
+cp *.{conf,config} ./config/
+
+mv *.{md.txt} ./docs/
+
+mv *.{csv,dat} ./data/
+
+mv *.{jpg,png,gif} ./images/ && mv *.{docs,md,txt,ppt,sh} ./docs
+
+mkdir images && mv *.jpg ./images
+
+[ $(ls -1 *.txt 2>/dev/null | wc -l) -gt 5 ] && mkdir -p backup || echo "파일이 부족합니다"
+
+ls -al
+```
