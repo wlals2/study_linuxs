@@ -382,8 +382,9 @@ cut -d " " -f1 access.log | sort | uniq -c
 ### 12-2. 시스템 사용자 분석
 ###  /etc/passwd 파일에서 실제 사용자(홈 디렉토리가 /home으로 시작)만 추출하여 사용자명 순으로 정렬하세요
 ```bash
-grep '/home/' /etc/passwd | sort
-ohjimin:x:1000:1000:ohjimin:/home/ohjimin:/bin/bash
+cat /etc/passwd | grep home | cut -d':' -f1
+ohjimin
+
 ```
 
 ### 12-3. 설정 파일 백업 및 비교
