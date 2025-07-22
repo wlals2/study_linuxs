@@ -386,6 +386,19 @@ ohjimin:x:1000:1000:ohjimin:/home/ohjimin:/bin/bash
 ### 12-3. 설정 파일 백업 및 비교
 ### employees.txt 파일을 백업하고, 원본에서 한 줄을 수정한 후 차이점을 확인하세요
 ```bash
+ohjimin@localhost:~/test/text_processing_practice$ cp employees.txt employees.txt.bak
+ohjimin@localhost:~/test/text_processing_practice$ cat employees.txt
+John:25:Seoul:Engineer
+Mike:30:Busan:Manager
+Sara:22:Seoul:Designer
+Tom:35:Daegu:Developer
+Lisa:28:Seoul:Analyst
+ohjimin@localhost:~/test/text_processing_practice$ vi employees.txt
+ohjimin@localhost:~/test/text_processing_practice$ diff employees.txt employees.txt.bak
+1c1
+< 2323John:25:Seoul:Engineer
+---
+> John:25:Seoul:Engineer
 
 ```
 
