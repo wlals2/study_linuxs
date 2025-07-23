@@ -1,7 +1,7 @@
 # **🧪 Shell Script 실습 문제 세트: "변수 중심 텍스트 분석"**
 
 - 📁 디렉토리 및 파일 구조 생성 스크립트
-
+```bash
 mkdir -p ~/shell_practice/env
 
 cd ~/shell_practice/env
@@ -77,7 +77,7 @@ Grace <grace@gmail.com>
 Hank <hank@naver.com>
 
 EOF
-
+```
 ---
 
 ### **✅ [문제 1] 파일 내 단어 수 세기**
