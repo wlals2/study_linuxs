@@ -95,6 +95,34 @@ cut, grep, sort, wc 명령어 활용
 파이프라인으로 명령어 연결
 조건문으로 점수 범위 검사
 ```
+[im@192.168.0.31 ~/Downloads/test1]$ cat student_test.sh
+#!/bin/bash
+
+file=students.txt
+read -p "과목을 입력해주세요: " class
+if [[ "$class" != "수학" && "$class" != "영어" && "$class" != "과학" ]]; then
+    echo "[오류] 지원하지 않는 과목입니다."
+    echo "가능한 과목: 수학, 영어, 과학"
+    exit 1
+fi
+
+if [ "$class" == "수학" ]; then
+        math=$(grep "$class" "$file" | cut -d: -f2,3)
+        math_num=$(grep "$class" "$file" | cut -d: -f3)
+        echo "$math"
+        echo "$math_num"
+
+elif [ "$class" == "영어" ]; then
+        eng=$(grep "$class" "$file" | cut -d: -f4,5)
+        eng_num=$(grep "$class" "$file" | cut -d: -f5)
+        echo "$eng"
+
+else
+        sc=$(grep "$class" "$file" | cut -d: -f6,7)
+        sc_num=$(grep "$class" "$file" | cut -d: -f7)
+        echo "$sc"
+fi
+
 
 
 
