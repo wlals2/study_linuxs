@@ -39,7 +39,7 @@ Buy groceries 줄을 복사한 뒤, 맨 아래에 두 번 붙여넣기
 
 
 저장 후 종료
-
+✅ 명령어 힌트: /검색, yy, p, :wq
 ```
 ### 답변
 ```bash
@@ -50,13 +50,15 @@ p
 1. Clean the house
 2. Buy groceries
 3. Call Mom
-Buy groceries
-Buy groceries
-```
-### ✅ 명령어 힌트: /검색, yy, p, :wq
-```bash
+2. Buy groceries
+2. Buy groceries
 
-🔹 실습 2. (기초+: Create & Append) – comp1/fruits.txt
+```
+
+
+
+# 🔹 실습 2. (기초+: Create & Append) – comp1/fruits.txt
+```bash
 🔧 목표: 입력 모드와 줄 추가 숙련
 작업 경로: ~/vim_crud_practice/comp1/fruits.txt
 
@@ -66,18 +68,12 @@ Buy groceries
 Elderberry
 저장 후 종료
 ```
-답변
-```bash
-/Call
-yy
-p
-:wq
+### 답변
 
-1. Clean the house
-2. Buy groceries
-3. Call Mom
-Buy groceries
-Buy groceries
+```bash
+Apple
+Banana
+Cherry
 Durian
 Elderberry
 
@@ -100,20 +96,16 @@ john@example.com → john.doe@gmail.com으로 수정
 ```
 ### 답변
 ```bash
-G
-o
-yy
-p p p
-:wq
 Name,Email
-John Smith,Doe@gmail.com
-Jane Smith,jane@sample.com
-John Smith,Doe@gmail.com
-John Smith,Doe@gmail.com
+john.doe@gmail.com
+Jane Doe,jane@example.com
+john.doe@gmail.com
+john.doe@gmail.com
+john.doe@gmail.com
 ```
 ### ✅ 명령어 힌트: :%s///, yy, p, :wq
 
-### 🔹 실습 4. (중상: Delete & Navigation) – comp1/fruits.txt
+## 🔹 실습 4. (중상: Delete & Navigation) – comp1/fruits.txt
 ### 🔧 목표: 줄 삭제 후 조작
 ```bash
 작업 경로: ~/vim_crud_practice/comp1/fruits.txt
@@ -124,18 +116,16 @@ Cherry 해당 줄을 삭제
 ```
 ### 답변
 ```bash
-/cherry 
-dd
-:wq
-
 Apple
 Banana
+Durian
+Elderberry
 
 ```
 
-### ✅ 명령어 힌트: /Cherry, dd, :wq
+✅ 명령어 힌트: /Cherry, dd, :wq
 
-### 🔹 실습 5. (심화: 다중 치환 + 복구) – comp3/users.csv
+## 🔹 실습 5. (심화: 다중 치환 + 복구) – comp3/users.csv
 ### 🔧 목표: 반복 치환, 삭제 복구
 ```bash
 작업 경로: ~/vim_crud_practice/comp3/users.csv
@@ -149,9 +139,9 @@ Banana
 
 ```
 
-### ✅ 명령어 힌트: :%s/Doe/Smith/g, u, :wq
+✅ 명령어 힌트: :%s/Doe/Smith/g, u, :wq
 
-### 🎓 선택 학습 질문 (보조 학습)
+## 🎓 선택 학습 질문 (보조 학습)
 ```bash
 vim에서 실수로 삭제한 줄을 복구하려면?
  → u (undo), U (줄 단위 undo), Ctrl+r (redo)
@@ -167,14 +157,12 @@ vim에서 반복 치환 명령은?
 ### 답변
 ```bash
 :%s/Doe/Smith/g
-delete 
-U
-:wq
 Name,Email
-John Smith,john@gmail.com
-Jane Smith,jane@sample.com
-John Smith,john@gmail.com
-John Smith,john@gmail.com
+john.doe@gmail.com
+Jane Smith,jane@example.com
+john.doe@gmail.com
+john.doe@gmail.com
+john.doe@gmail.com
 
 ```
 
