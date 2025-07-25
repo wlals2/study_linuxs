@@ -79,7 +79,16 @@ echo "전체 연결 시도: $every건"
 echo "성공: $success 건"
 echo "실패: $fail 건"
 echo "성공률: ${percent}%"
-echo "$evg%"
+echo "성공률: $evg%"
+
+
+sh networktest.sh network.log
+=== 네트워크 연결 분석 결과 ===
+전체 연결 시도: 8건
+성공: 6 건
+실패: 2 건
+성공률: 75%
+성공률: 75%
 
 ```
 
