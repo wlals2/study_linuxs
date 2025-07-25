@@ -111,6 +111,39 @@ head나 tail로 결과 제한
 ```
 ### 답변
 ```bash 
+#!/bin/bash
+
+# 라인이 값을 하나씩 자르는 역할을한다. sed 명령어를 통해 특정 줄을 자름
+line1=$(cut -d" " -f3 $1 | sort | uniq -c | sort -nr | sed -n '1p')
+line2=$(cut -d" " -f3 $1 | sort | uniq -c | sort -nr | sed -n '2p')
+line3=$(cut -d" " -f3 $1 | sort | uniq -c | sort -nr | sed -n '3p')
+
+echo "=== 접속 빈도 TOP 3 ==="
+
+if [ -n "$line1" ]; then
+    l1=$(echo "$line1" | tr -s " ")
+    count=$(echo "$l1" | cut -d" " -f2)
+    ip=$(echo "$l1" | cut -d" " -f3)
+    first_time=$(grep "$ip" $1 | head -1 | cut -d" " -f2)
+    echo "1위: $ip (${count}회) - 첫 접속: $first_time"
+fi
+
+if [ -n "$line2" ]; then
+    l2=$(echo "$line2" | tr -s " ")
+    count=$(echo "$l2" | cut -d" " -f2)
+    ip=$(echo "$l2" | cut -d" " -f3)
+    first_time=$(grep "$ip" $1 | head -1 | cut -d" " -f2)
+    echo "2위: $ip (${count}회) - 첫 접속: $first_time"
+fi
+
+if [ -n "$line3" ]; then
+    l3=$(echo "$line3" | tr -s " ")
+    count=$(echo "$l3" | cut -d" " -f2)
+    ip=$(echo "$l3" | cut -d" " -f3)
+    first_time=$(grep "$ip" $1 | head -1 | cut -d" " -f2)
+    echo "3위: $ip (${count}회) - 첫 접속: $first_time"
+fi
+
 ```
 
 ### 문제 3: 서버 상태 점검 스크립트
