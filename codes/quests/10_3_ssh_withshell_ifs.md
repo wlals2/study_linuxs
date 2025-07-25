@@ -101,43 +101,86 @@ cut, grep, sort, wc 명령어 활용
 
 file=students.txt
 read -p "과목을 입력해주세요: " class
+
 if [[ "$class" != "수학" && "$class" != "영어" && "$class" != "과학" ]]; then
-        echo "[오류] 지원하지 않는 과목입니다."
-        echo "가능한 과목: 수학, 영어, 과학"
-        exit 1
+    echo "[오류] 지원하지 않는 과목입니다."
+    echo "가능한 과목: 수학, 영어, 과학"
+    exit 1
 fi
 
+#  과목별 필드 번호 세팅
 if [ "$class" == "수학" ]; then
-        math=$(grep "$class" "$file" | cut -d: -f2,3)
-        scores=$(grep "$class" "$file" | cut -d: -f3)
-        echo "$math"
-
+    field=3
 elif [ "$class" == "영어" ]; then
-        eng=$(grep "$class" "$file" | cut -d: -f4,5)
-        scores=$(grep "$class" "$file" | cut -d: -f5)
-        echo "$eng"
-
-else sc=$(grep "$class" "$file" | cut -d: -f6,7)
-        scores=$(grep "$class" "$file" | cut -d: -f7)
-        echo "$sc"
+    field=5
+else
+    field=7
 fi
+sc=$(cut -d: -f$field "$file")
+echo "============="$class"================"
+echo "$sc"
+scores=$(cut -d: -f$field "$file" | tr '\n' ' ')
+
+# 초기값 세팅
+sum=0
+count=0
+min=9999
+max=0
+a_cnt=0
+b_cnt=0
+c_cnt=0
+d_cnt=0
+
+# for문 순회
+for score in $scores; do
+    sum=$((sum + score))
+    count=$((count + 1))
+
+    # 최대/최소
+    if [ "$score" -gt "$max" ]; then
+        max=$score
+    fi
+    if [ "$score" -lt "$min" ]; then
+        min=$score
+    fi
+
+    # 등급별 분류
+    if [ "$score" -ge 90 ]; then
+        a_cnt=$((a_cnt + 1))
+    elif [ "$score" -ge 80 ]; then
+        b_cnt=$((b_cnt + 1))
+    elif [ "$score" -ge 70 ]; then
+        c_cnt=$((c_cnt + 1))
+    else
+        d_cnt=$((d_cnt + 1))
+    fi
+done
+
+# 평균(소수점까지), 평가 등급
+avg=$(echo "scale=2; $sum / $count" | bc)
 
 echo "===============$class 점수================"
+echo "정렬된 점수:"
+# sort로 정렬된 점수 출력(정수 오름차순)
+echo $scores | tr ' ' '\n' | sort -n | xargs
 
-# 평균/최소/최대 계산
-echo "$scores" | awk '
-BEGIN { min=9999; max=0; sum=0; count=0 }
-{
-    if($1+0 < min) min=$1+0
-    if($1+0 > max) max=$1+0
-    sum += $1
-    count++
-}
-END {
-    print "평균:", sum/count
-    print "최소:", min
-    print "최대:", max
-}'
+echo "최고점: $max"
+echo "최저점: $min"
+echo "평균점: $avg"
+
+echo "A(90점 이상): $a_cnt 명"
+echo "B(80점 이상): $b_cnt 명"
+echo "C(70점 이상): $c_cnt 명"
+echo "D(70점 미만): $d_cnt 명"
+
+if (( $(echo "$avg >= 85" | bc -l) )); then
+    echo "평가: 우수"
+elif (( $(echo "$avg >= 75" | bc -l) )); then
+    echo "평가: 양호"
+else
+    echo "평가: 보통"
+fi
+
 ```
 
 
