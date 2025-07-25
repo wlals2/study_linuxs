@@ -120,6 +120,7 @@ line3=$(cut -d" " -f3 $1 | sort | uniq -c | sort -nr | sed -n '3p')
 
 echo "=== 접속 빈도 TOP 3 ==="
 
+# 라인 별로 값을자르기 어렵기 때문에 전체적인 줄 하나로 사용 할때마다코드를 써 자르기 시작한다.
 if [ -n "$line1" ]; then
     l1=$(echo "$line1" | tr -s " ")
     count=$(echo "$l1" | cut -d" " -f2)
@@ -143,6 +144,14 @@ if [ -n "$line3" ]; then
     first_time=$(grep "$ip" $1 | head -1 | cut -d" " -f2)
     echo "3위: $ip (${count}회) - 첫 접속: $first_time"
 fi
+```
+```bash
+# 쉘 실행 
+sh networktest2.sh network.log
+=== 접속 빈도 TOP 3 ===
+1위: 192.168.1.102 (2회) - 첫 접속: 10:31:15
+2위: 192.168.1.101 (2회) - 첫 접속: 10:30:30
+3위: 192.168.1.100 (2회) - 첫 접속: 10:30:25
 
 ```
 
