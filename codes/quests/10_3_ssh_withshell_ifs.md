@@ -101,27 +101,43 @@ cut, grep, sort, wc 명령어 활용
 file=students.txt
 read -p "과목을 입력해주세요: " class
 if [[ "$class" != "수학" && "$class" != "영어" && "$class" != "과학" ]]; then
-    echo "[오류] 지원하지 않는 과목입니다."
-    echo "가능한 과목: 수학, 영어, 과학"
-    exit 1
+        echo "[오류] 지원하지 않는 과목입니다."
+        echo "가능한 과목: 수학, 영어, 과학"
+        exit 1
 fi
 
 if [ "$class" == "수학" ]; then
         math=$(grep "$class" "$file" | cut -d: -f2,3)
-        math_num=$(grep "$class" "$file" | cut -d: -f3)
+        scores=$(grep "$class" "$file" | cut -d: -f3)
         echo "$math"
-        echo "$math_num"
 
 elif [ "$class" == "영어" ]; then
         eng=$(grep "$class" "$file" | cut -d: -f4,5)
-        eng_num=$(grep "$class" "$file" | cut -d: -f5)
+        scores=$(grep "$class" "$file" | cut -d: -f5)
         echo "$eng"
 
-else
-        sc=$(grep "$class" "$file" | cut -d: -f6,7)
-        sc_num=$(grep "$class" "$file" | cut -d: -f7)
+else sc=$(grep "$class" "$file" | cut -d: -f6,7)
+        scores=$(grep "$class" "$file" | cut -d: -f7)
         echo "$sc"
 fi
+
+echo "===============$class 점수================"
+
+# 평균/최소/최대 계산
+echo "$scores" | awk '
+BEGIN { min=9999; max=0; sum=0; count=0 }
+{
+    if($1+0 < min) min=$1+0
+    if($1+0 > max) max=$1+0
+    sum += $1
+    count++
+}
+END {
+    print "평균:", sum/count
+    print "최소:", min
+    print "최대:", max
+}'
+
 
 
 
