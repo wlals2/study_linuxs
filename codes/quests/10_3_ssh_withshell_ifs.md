@@ -95,6 +95,7 @@ cut, grep, sort, wc 명령어 활용
 파이프라인으로 명령어 연결
 조건문으로 점수 범위 검사
 ```
+```bash
 [im@192.168.0.31 ~/Downloads/test1]$ cat student_test.sh
 #!/bin/bash
 
@@ -137,6 +138,7 @@ END {
     print "최소:", min
     print "최대:", max
 }'
+```
 
 
 
