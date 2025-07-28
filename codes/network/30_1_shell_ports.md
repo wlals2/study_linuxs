@@ -86,7 +86,7 @@ sh check_port.sh 22 26 27 243 214324 23141234
 - 프로세스가 없으면 해당 메시지 출력
 
 **실행 예제**:
-
+```bash
 $ ./kill_port.sh 8080
 
 포트 8080 사용 프로세스 검색 중...
@@ -112,7 +112,42 @@ $ ./kill_port.sh 9999
 포트 9999 사용 프로세스 검색 중...
 
 포트 9999를 사용하는 프로세스가 없습니다.
+```
+```bash
+#!/bin/bash
 
+port=$(lsof -i :22 | tail -1 | tr -s " " | cut -d" " -f2)
+echo "$port"
+
+num=$(lsof -i :$1 | tail -1 | tr -s " " | cut -d" " -f2)
+process=$(lsof -i :$1 | tail -1 | tr -s " " | cut -d" " -f1)
+echo "포트 $1 사용 프로세스 검색 중..."
+echo "발견된 프로세스:"
+echo "PID: $num,프로세스명: $process"
+
+echo "$num"
+if [ -n $num ]; then
+        echo "프로세스 종료 중..."
+        kill -9 "$num"
+        echo "PID $num 종료 완료"
+        echo "포트 $1이 해제되었습니다."
+else
+        echo "포트 $1 사용 프로세스 검색중 ..."
+        echo "포트 $1 사용하는 프로세스가 없습니다."
+fi
+
+# 실행
+sh kill_port.sh 22
+34471
+포트 22 사용 프로세스 검색 중...
+발견된 프로세스:
+PID: 34471,프로세스명: ssh
+34471
+프로세스 종료 중...
+PID 34471 종료 완료
+포트 22이 해제되었습니다.
+
+```
 ---
 
 ## **연습문제 3: 웹 서비스 상태 모니터링 스크립트**
